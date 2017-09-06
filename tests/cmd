@@ -1,0 +1,2 @@
+python3 /home/eremeykin/d_disk/projects/python/effective-clustering/eclustering/agglomerative/a_ward.py /home/eremeykin/d_disk/projects/Clustering-cpp/clustering-cpp/tests/data/test3-points /home/eremeykin/d_disk/projects/Clustering-cpp/clustering-cpp/tests/data/test3-labels 2
+/home/eremeykin/d_disk/projects/Clustering-cpp/clustering-cpp/Release/clustering-cpp /home/eremeykin/d_disk/projects/Clustering-cpp/clustering-cpp/tests/data/test3-points /home/eremeykin/d_disk/projects/Clustering-cpp/clustering-cpp/tests/data/test3-labels 2
