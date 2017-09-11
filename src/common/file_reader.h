@@ -5,8 +5,8 @@
  *      Author: eremeykin
  */
 
-#ifndef FILE_READER_H_
-#define FILE_READER_H_
+#ifndef COMMON_FILE_READER_H_
+#define COMMON_FILE_READER_H_
 #include <string>
 #include <Eigen/Core>
 
@@ -33,4 +33,4 @@ private:
 	void get_dim();
 };
 
-#endif /* FILE_READER_H_ */
+#endif /* COMMON_FILE_READER_H_ */

@@ -5,11 +5,11 @@
  *      Author: eremeykin
  */
 
-#ifndef A_WARD_H_
-#define A_WARD_H_
+#ifndef A_WARD_A_WARD_H_
+#define A_WARD_A_WARD_H_
 #include "Eigen/Core"
-#include "cluster.h"
 #include <vector>
+#include "../common/cluster.h"
 using namespace Eigen;
 
 class AWard {
@@ -36,9 +36,7 @@ private:
 	void update_cluster(int at_index, Cluster cluster);
 	void delete_cluster(int c);
 	void print_distance_matrix();
-	void remove_row(Eigen::MatrixXd& matrix, unsigned int row);
-	void remove_column(Eigen::MatrixXd& matrix, unsigned int col);
 	void print_trace();
 };
 
-#endif /* A_WARD_H_ */
+#endif /* A_WARD_A_WARD_H_ */

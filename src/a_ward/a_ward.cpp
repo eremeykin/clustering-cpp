@@ -6,10 +6,13 @@
  */
 
 #include "a_ward.h"
+
 #include <limits.h>
 #include <assert.h>
 #include <iostream>
 #include <map>
+#include "../common/utils.h"
+
 using namespace Eigen;
 
 AWard::AWard(Matrix<double, Dynamic, Dynamic> data, int* labels, int kstar) {
@@ -114,34 +117,11 @@ int * AWard::run() {
 	return result;
 }
 
-void AWard::remove_row(Eigen::MatrixXd& matrix, unsigned int rowToRemove) {
-	unsigned int numRows = matrix.rows() - 1;
-	unsigned int numCols = matrix.cols();
-
-	if (rowToRemove < numRows)
-		matrix.block(rowToRemove, 0, numRows - rowToRemove, numCols) =
-				matrix.block(rowToRemove + 1, 0, numRows - rowToRemove,
-						numCols);
-
-	matrix.conservativeResize(numRows, numCols);
-}
-
-void AWard::remove_column(Eigen::MatrixXd& matrix, unsigned int colToRemove) {
-	unsigned int numRows = matrix.rows();
-	unsigned int numCols = matrix.cols() - 1;
-
-	if (colToRemove < numCols)
-		matrix.block(0, colToRemove, numRows, numCols - colToRemove) =
-				matrix.block(0, colToRemove + 1, numRows,
-						numCols - colToRemove);
-
-	matrix.conservativeResize(numRows, numCols);
-}
 
 void AWard::delete_cluster(int c) {
 	clusters.erase(clusters.begin() + c);
-	remove_column(distance_matrix, c);
-	remove_row(distance_matrix, c);
+	Utils::remove_column(distance_matrix, c);
+	Utils::remove_row(distance_matrix, c);
 }
 
 void AWard::update_cluster(int at_index, Cluster new_cluster) {
